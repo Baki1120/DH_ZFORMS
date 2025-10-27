@@ -1,0 +1,233 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Customer Invoice',
+                     typeNamePlural: 'Customer Invoice',
+                     typeImageUrl: 'sap-icon://add-document',
+                     title: { type: #STANDARD, value: 'InvNo', label: 'Customer Invoice Header', iconUrl: 'sap-icon://upload' } } }
+annotate view ZC_TB_CI_H with
+{
+  @EndUserText.label: 'UuidH'
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'UuidH'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: 'UuidH'
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  @UI.hidden: true
+  UuidH;
+
+  @EndUserText.label: 'Invoice Number'
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'Invoice Number'
+  } ,
+  { type: #FOR_ACTION, dataAction: 'Print', label: 'Print', invocationGrouping: #CHANGE_SET }
+  ]
+  @UI.lineItem: [ {
+    position: 20 ,
+    label: 'Invoice Number' },
+    { type: #FOR_ACTION, dataAction: 'Print', label: 'Print', invocationGrouping: #CHANGE_SET }
+     ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  InvNo;
+
+  @EndUserText.label: 'Award Title'
+  @UI.identification: [ {
+    position: 30 ,
+    label: 'Award Title'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 ,
+    label: 'Award Title'
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  AwardTitle;
+
+  @EndUserText.label: 'Award Period'
+  @UI.identification: [ {
+    position: 40 ,
+    label: 'Award Period'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+    label: 'Award Period'
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  AwardPeriod;
+
+  @EndUserText.label: 'Principal Investigator'
+  @UI.identification: [ {
+    position: 50 ,
+    label: 'Principal Investigator'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 ,
+    label: 'Principal Investigator'
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  PrincipalInvestigator;
+
+  @EndUserText.label: 'Award Number'
+  @UI.identification: [ {
+    position: 60 ,
+    label: 'Award Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 ,
+    label: 'Award Number'
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  AwardNumber;
+
+  @EndUserText.label: 'Invoice Date'
+  @UI.identification: [ {
+    position: 70 ,
+    label: 'Invoice Date'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 ,
+    label: 'Invoice Date'
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  InvDate;
+
+  @EndUserText.label: 'Invoice Period'
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'Invoice Period'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 ,
+    label: 'Invoice Period'
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  InvPer;
+
+  @EndUserText.label: 'Project Number'
+  @UI.identification: [ {
+    position: 90 ,
+    label: 'Project Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: 'Project Number'
+  } ]
+  @UI.selectionField: [ {
+    position: 90
+  } ]
+  ProjectNumber;
+
+  @EndUserText.label: 'Status'
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Status'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: 'Status'
+  } ]
+  @UI.selectionField: [ {
+    position: 100
+  } ]
+  Status;
+
+  @EndUserText.label: 'Url'
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'Url'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: 'Url'
+  } ]
+  @UI.selectionField: [ {
+    position: 110
+  } ]
+  @UI.hidden: true
+  Url;
+
+  @UI.identification: [ {
+    position: 120
+  } ]
+  @UI.lineItem: [ {
+    position: 120
+  } ]
+  @UI.selectionField: [ {
+    position: 120
+  } ]
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.identification: [ {
+    position: 130
+  } ]
+  @UI.lineItem: [ {
+    position: 130
+  } ]
+  @UI.selectionField: [ {
+    position: 130
+  } ]
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.identification: [ {
+    position: 140
+  } ]
+  @UI.lineItem: [ {
+    position: 140
+  } ]
+  @UI.selectionField: [ {
+    position: 140
+  } ]
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.identification: [ {
+    position: 150
+  } ]
+  @UI.lineItem: [ {
+    position: 150
+  } ]
+  @UI.selectionField: [ {
+    position: 150
+  } ]
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.identification: [ {
+    position: 160
+  } ]
+  @UI.lineItem: [ {
+    position: 160
+  } ]
+  @UI.selectionField: [ {
+    position: 160
+  } ]
+  @UI.hidden: true
+  LastChangedAt;
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFORMS_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Print forms mesage</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZFORMS_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Process &amp;1 in the background. Please check the result later.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZFORMS_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>No valid document found.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

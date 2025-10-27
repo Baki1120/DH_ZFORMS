@@ -1,0 +1,54 @@
+managed implementation in class ZCL_R_CI_H unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TB_CI_H alias CustomerInvoiceHeader
+persistent table ztb_ci_h
+draft table ztb_ci_h_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+
+{
+  field ( readonly )
+  UuidH,
+  InvNo,
+  CreatedBy,
+  CreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  field ( numbering : managed )
+  UuidH;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb_ci_h
+    {
+      UuidH                 = uuid_h;
+      InvNo                 = inv_no;
+      AwardTitle            = award_title;
+      AwardPeriod           = award_period;
+      PrincipalInvestigator = principal_investigator;
+      AwardNumber           = award_number;
+      InvDate               = inv_date;
+      InvPer                = inv_per;
+      ProjectNumber         = project_number;
+      Status                = status;
+      Url                   = url;
+      CreatedBy             = created_by;
+      CreatedAt             = created_at;
+      LocalLastChangedBy    = local_last_changed_by;
+      LocalLastChangedAt    = local_last_changed_at;
+      LastChangedAt         = last_changed_at;
+    }
+}

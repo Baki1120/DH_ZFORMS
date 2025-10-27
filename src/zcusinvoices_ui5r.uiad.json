@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "RCUH Print Customer Invoices",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "RCUH Print Customer Invoices"
+  },
+  "ui5AppDetails": {
+    "appId": "adobecustomerinvoice"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_8E6AD23DDE6BB0FF217DC22BE1176FE405F658F7_TM",
+    "semanticObject": "zcustomerinvoice",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_8E6AD23DDE6BB0FF217DC22BE1176FE405F658F7_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "RCUH Print Customer Invoices",
+        "subtitle": "RCUH Print Customer Invoices"
+      }
+    }
+  ]
+}

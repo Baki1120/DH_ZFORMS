@@ -1,0 +1,6 @@
+@EndUserText.label: 'Customer Invoice Header'
+define service ZUI_CI_H_O4_T {
+  expose ZI_CI_H       as CustomerInvoiceHeader;
+  expose zi_ci_log     as CustomerInvoiceLog;
+  expose ZC_MERGE_FILE as MergeFile;
+}

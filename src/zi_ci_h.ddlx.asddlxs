@@ -1,0 +1,65 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Customer Invoice',
+                     typeNamePlural: 'Customer Invoice',
+                     typeImageUrl: 'sap-icon://add-document',
+                     title: { type: #STANDARD, value: 'BillingDocument', label: 'Customer Invoice Header', iconUrl: 'sap-icon://upload' } } }
+annotate entity ZI_CI_H with
+{
+
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  },
+    { id: 'Log',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'View Print Logs',
+      position: 20,
+      targetElement: '_CustomerInvoiceLog'}]
+
+  @EndUserText.label: 'Invoice Number'
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'Invoice Number'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: 'Invoice Number' },
+    { type: #FOR_ACTION, dataAction: 'print', label: 'Print Form', invocationGrouping: #CHANGE_SET },
+    { type: #FOR_ACTION, dataAction: 'background', label: 'Run in Background', invocationGrouping: #CHANGE_SET }
+     ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+
+  BillingDocument;
+  @UI: { lineItem:       [ { position: 20, label: 'Accounting Document' } ],
+   identification: [ { position: 20, label: 'Accounting Document' } ] }
+  AccountingDocument;
+  @UI: { lineItem:       [ { position: 30, label: 'Company Code' } ],
+   identification: [ { position: 30, label: 'Company Code' } ] }
+  CompanyCode;
+  @UI: { lineItem:       [ { position: 40, label: 'Year' } ],
+  identification: [ { position: 40, label: 'Year' } ] }
+  FiscalYear;
+  @UI: { lineItem:       [ { position: 50, label: 'Overall Status' } ],
+  identification: [ { position: 50, label: 'Overall Status' } ] }
+  @UI.textArrangement: #TEXT_FIRST
+  OverallBillingStatus;
+
+  @UI: { lineItem:       [ { position: 60, label: 'Invoice Date' } ],
+  identification: [ { position: 60, label: 'Invoice Date' } ] }
+  BillingDocumentDate;
+
+  @UI: { lineItem: [ { position: 70, label: 'Customer Name' } ],
+  identification: [ { position: 70, label: 'Customer Name' } ],
+  selectionField: [{
+      position: 20
+  }] }
+  @UI.textArrangement: #TEXT_FIRST
+  CustomerCode;
+
+}

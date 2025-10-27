@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+@UI.createHidden: true
+@UI: { headerInfo: { typeName: 'View Print Logs',
+                     typeNamePlural: 'View Print Logs',
+                     typeImageUrl: 'sap-icon://work-history',
+                     title: { type: #STANDARD, value: 'UuidLog', label: 'View Print Logs' } } }
+annotate entity zi_ci_log with
+{
+
+  @UI.facet: [ { id: 'lineItem', type: #IDENTIFICATION_REFERENCE, label: 'View Print Logs', position: 10 } ]
+  @UI.hidden: true
+  UuidLog;
+
+  @UI: { lineItem:       [ { position: 30, label: 'Status', value: 'Status', criticality: 'Criticality' } ],
+     identification: [ { position: 30, label: 'Status', criticality: 'Criticality' } ] }
+  @UI.textArrangement: #TEXT_FIRST
+  Status;
+  @UI: { lineItem:       [ { position: 40, label: 'Message description' } ],
+     identification: [ { position: 40, label: 'Message description' } ] }
+  @UI.multiLineText: true
+  Message;
+
+
+  @UI.identification: [ { position: 43, label: 'File name' } ]
+  @UI.lineItem: [ { position: 43, importance: #MEDIUM, label: 'File name' } ]
+  Attachment;
+
+  @UI: { lineItem: [ { position: 100, label: 'Reference UUID' } ],
+   identification: [ { position: 100, label: 'Reference UUID' } ] }
+  @UI.multiLineText: false
+  ReferenceUUID;
+
+  @UI: { lineItem:       [ { position: 50, label: 'Create by' } ],
+    identification: [ { position: 50, label: 'Create by' } ] }
+  CreatedBy;
+  @UI: { lineItem:       [ { position: 60, label: 'Create At' } ],
+    identification: [ { position: 60, label: 'Create At' } ] }
+  CreatedAt;
+  @UI: { lineItem:       [ { position: 70, label: 'Change by' } ],
+  identification: [ { position: 70, label: 'Change by' } ] }
+  LocalLastChangedBy;
+  @UI: { lineItem:       [ { position: 80, label: 'Change At' } ],
+  identification: [ { position: 80, label: 'Change At' } ] }
+  LocalLastChangedAt;
+
+  @UI: { lineItem: [ { position: 90, label: 'Display Document', type: #WITH_URL, url: 'Url' } ],
+       identification: [ { position: 90, label: 'Display Document', type: #WITH_URL, url: 'Url' } ] }
+  BillingDocument;
+
+  @UI: { lineItem: [ { position: 110, label: 'Background UUID' } ],
+   identification: [ { position: 110, label: 'Background UUID' } ] }
+  BackgroundUUID;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  Url;
+
+  //  @UI: { lineItem:       [ { position: 43, label: 'File name' } ],
+  //     identification: [ { position: 43, label: 'File name' } ] }
+  //  @UI.multiLineText: false
+  @UI.hidden: true
+  FileName;
+
+}

@@ -1,0 +1,13 @@
+abstract;
+strict(2);
+with hierarchy;
+
+define behavior for ZA_CI_REQ alias CustomerInvoiceRequest
+{
+  association _CustomerInvoiceList;
+}
+
+define behavior for za_ci_number alias CustomerInvoiceList
+{
+  association _CustomerInvoiceRequest;
+}

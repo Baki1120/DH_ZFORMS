@@ -1,0 +1,27 @@
+managed implementation in class zcl_i_ci_h unique;
+
+define behavior for ZI_CI_H alias CustomerInvoice
+persistent table ztb_ci_h
+lock master
+authorization master ( instance )
+with additional save
+{
+
+  action print deep parameter ZA_MER_PDF result [1] $self;
+  action background deep parameter ZA_MER_PDF;
+  static action apiPrint deep parameter ZA_CI_REQ result [1] ZA_CI_RES;
+  // ZA_CI_REQ to receive the request --> Handling multiples customer invoices at once.
+  // ZA_CI_RES to response the message for each customer invoice.
+  field ( readonly ) BillingDocument;
+  association _CustomerInvoiceLog;
+}
+
+define behavior for zi_ci_log alias CustomerInvoiceLog
+persistent table ztb_ci_log
+lock dependent by _CustomerInvoiceHeader
+authorization dependent by _CustomerInvoiceHeader
+{
+  association _CustomerInvoiceHeader;
+  field ( readonly ) BillingDocument;
+  field ( numbering : managed, readonly ) UuidLog;
+}
